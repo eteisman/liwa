@@ -192,9 +192,9 @@ Tenslotte willen wij u bedanken voor uw voortdurende steun aan The Living Water 
 
 	   <div class="title_box">De eerste projecten zijn voor Umumelike, Anambra State in Nigeria</div>
 
-        <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
+        <xscript src='https://maps.googleapis.com/maps/api/js?v=3.exp'></xscript>
 
-        <div style='overflow:hidden;height:440px;width:100%; border: solid 1px silver;'>
+        <div style='overflow:hidden;height:440px;width:100%; border: solid 1px silver; display: none;'>
 
             <div id='gmap_canvas' style='height:440px;width:100%;'></div>
 
@@ -204,9 +204,38 @@ Tenslotte willen wij u bedanken voor uw voortdurende steun aan The Living Water 
 
         </div>
 
-        <script type='text/javascript'>function init_map(){var myOptions = {zoom:10,center:new google.maps.LatLng(6.2757656,7.006839300000024),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(6.2757656,7.006839300000024)});infowindow = new google.maps.InfoWindow({content:'<strong>Anambra State in Nigeria</strong><br>Anambra, Nigeria<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);
-
+        <script type='text/javascript'>
+            //function init_map(){var myOptions = {zoom:10,center:new google.maps.LatLng(6.2757656,7.006839300000024),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(6.2757656,7.006839300000024)});infowindow = new google.maps.InfoWindow({content:'<strong>Anambra State in Nigeria</strong><br>Anambra, Nigeria<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}
+            //google.maps.event.addDomListener(window, 'load', init_map);
         </script>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+            integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+            crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+            integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+            crossorigin=""></script>
+        <div style='overflow:hidden;height:440px;width:100%; border: solid 1px silver;'>
+            <div id="map" style="height: 480px;"></div>
+
+            <script>
+                //document.addEventListener("load", function() {
+                    var map = L.map('map').setView([8.411385218294118, 4.242703182423228], 6);
+
+                    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+                        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                        minZoom: 1,
+                        maxZoom: 18,
+                        id: 'mapbox/streets-v11',
+                        tileSize: 512,
+                        zoomOffset: -1,
+                        accessToken: 'pk.eyJ1IjoiZXRlaXNtYW4iLCJhIjoiY2wzYnh4dGkyMGZobzNkcG1ieW1remR0cCJ9.US4H4EA_u9koxGy5EOvzRA'
+                    }).addTo(map);
+                    var marker = L.marker([8.411385218294118, 4.242703182423228]).addTo(map);
+
+                    console.log(map);
+                //});
+            </script>
+        </div>
 
      </div>
 
