@@ -52,8 +52,9 @@
        <img style="margin-top: 8px; border: solid 1px silver; width: 1200px; height:167px;" src="<?php echo site_url(); ?>/images/africa.gif"/>
 
        <img src="<?php echo site_url(); ?>/images/organigram-clear-new.jpg"/>
-
-       </div>
+       <br>
+       <span style="font-style: italic;">Onze stichting wordt gerund door onbetaalde vrijwilligers.</span>
+      </div>
 
     </div>
 
